@@ -10,10 +10,4 @@ import org.springframework.web.bind.annotation.*;
 @CrossOrigin(origins = "*")
 @RequestMapping("/usuario")
 public class UsuarioController {
-
-    @Autowired
-    UsuarioRepository usuarioRepository;
-
-
-
 }
