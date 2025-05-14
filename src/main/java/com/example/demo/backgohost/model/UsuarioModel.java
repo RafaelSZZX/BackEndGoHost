@@ -1,46 +1,40 @@
 package com.example.demo.backgohost.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+
+import jakarta.persistence.*;
 
 import java.util.Date;
 
-@Entity
-public class UsuarioModel {
+@MappedSuperclass
+public abstract class UsuarioModel {
 
-    //Atributos da tabela Usuario
     @Id@GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idUsuario;
+    private int id;
 
-    public String nmNome;
+    private String nmUsuario;
 
-    protected String nuCpf;
+    private String nuCpf;
 
-    private String nmEmail;
+    private String nuEmail;
 
-    private String nuTelefone;
+    private String nuSenha;
 
-    private Date nuDataNascimento;
+    private Date dtNascimento;
 
-    protected String nmSenha;
-
-    //Metodos Getter and Setter
-    public Long getIdUsuario() {
-        return idUsuario;
+    public int getId() {
+        return id;
     }
 
-    public void setIdUsuario(Long idUsuario) {
-        this.idUsuario = idUsuario;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getNmNome() {
-        return nmNome;
+    public String getNmUsuario() {
+        return nmUsuario;
     }
 
-    public void setNmNome(String nmNome) {
-        this.nmNome = nmNome;
+    public void setNmUsuario(String nmUsuario) {
+        this.nmUsuario = nmUsuario;
     }
 
     public String getNuCpf() {
@@ -51,35 +45,27 @@ public class UsuarioModel {
         this.nuCpf = nuCpf;
     }
 
-    public String getNmEmail() {
-        return nmEmail;
+    public String getNuEmail() {
+        return nuEmail;
     }
 
-    public void setNmEmail(String nmEmail) {
-        this.nmEmail = nmEmail;
+    public void setNuEmail(String nuEmail) {
+        this.nuEmail = nuEmail;
     }
 
-    public String getNuTelefone() {
-        return nuTelefone;
+    public String getNuSenha() {
+        return nuSenha;
     }
 
-    public void setNuTelefone(String nuTelefone) {
-        this.nuTelefone = nuTelefone;
+    public void setNuSenha(String nuSenha) {
+        this.nuSenha = nuSenha;
     }
 
-    public Date getNuDataNascimento() {
-        return nuDataNascimento;
+    public Date getDtNascimento() {
+        return dtNascimento;
     }
 
-    public void setNuDataNascimento(Date nuDataNascimento) {
-        this.nuDataNascimento = nuDataNascimento;
-    }
-
-    public String getNmSenha() {
-        return nmSenha;
-    }
-
-    public void setNmSenha(String nmSenha) {
-        this.nmSenha = nmSenha;
+    public void setDtNascimento(Date dtNascimento) {
+        this.dtNascimento = dtNascimento;
     }
 }
