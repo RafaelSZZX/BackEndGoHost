@@ -2,38 +2,37 @@ package com.example.demo.backgohost.model;
 
 import jakarta.persistence.*;
 
-@Entity
-@Table(name = "TBEMPRESA")
-public class EmpresaModel {
+@MappedSuperclass
+public abstract class EmpresaModel{
 
     @Id@GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long idEmpresa;
+    private int id;
 
-    private String nmEmpresa;
+    private String nmUsuarioAdmin = "admin";
 
-    private String nuCnpj;
+    private String nuSenhaAdmin = "admin";
 
-    public long getIdEmpresa() {
-        return idEmpresa;
+    public int getId() {
+        return id;
     }
 
-    public void setIdEmpresa(long idEmpresa) {
-        this.idEmpresa = idEmpresa;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getNuCnpj() {
-        return nuCnpj;
+    public String getNmUsuarioAdmin() {
+        return nmUsuarioAdmin;
     }
 
-    public void setNuCnpj(String nuCnpj) {
-        this.nuCnpj = nuCnpj;
+    public void setNmUsuarioAdmin(String nmUsuarioAdmin) {
+        this.nmUsuarioAdmin = nmUsuarioAdmin;
     }
 
-    public String getNmEmpresa() {
-        return nmEmpresa;
+    public String getNuSenhaAdmin() {
+        return nuSenhaAdmin;
     }
 
-    public void setNmEmpresa(String nmEmpresa) {
-        this.nmEmpresa = nmEmpresa;
+    public void setNuSenhaAdmin(String nuSenhaAdmin) {
+        this.nuSenhaAdmin = nuSenhaAdmin;
     }
 }

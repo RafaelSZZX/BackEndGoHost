@@ -5,7 +5,7 @@ import jakarta.validation.constraints.NotNull;
 
 import java.util.Date;
 
-public record AnfitriaoRecordDto(@NotNull int idAnfitriao,
+public record AnfitriaoRecordDto(@NotNull int id,
                                  @NotBlank String nmUsuario,
                                  @NotBlank String nuCpf,
                                  @NotBlank String nuEmail,

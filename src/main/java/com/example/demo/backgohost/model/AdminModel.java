@@ -3,19 +3,19 @@ package com.example.demo.backgohost.model;
 import jakarta.persistence.*;
 
 @Entity
+@Inheritance(strategy = InheritanceType.JOINED)
 @Table(name = "TBADMIN")
-public class AdminModel extends UsuarioModel{
+public class AdminModel extends EmpresaModel{
 
-    @Id@GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id@GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    @Override
     public int getId() {
         return id;
     }
 
-    @Override
     public void setId(int id) {
         this.id = id;
     }
+
 }

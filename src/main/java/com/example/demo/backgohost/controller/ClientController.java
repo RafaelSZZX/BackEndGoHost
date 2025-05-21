@@ -27,8 +27,8 @@ public class ClientController {
     }
 
     @GetMapping
-    public ResponseEntity<List<ClientModel>> getAllClients() {
-        return ResponseEntity.ok(clientRepository.findAll());
+    public ResponseEntity<List<ClientModel>> clientes() {
+        return ResponseEntity.status(HttpStatus.OK).body(clientRepository.findAll());
     }
 
 
