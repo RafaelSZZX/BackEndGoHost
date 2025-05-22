@@ -6,10 +6,10 @@ import java.lang.reflect.Type;
 
 @Entity
 @Table(name = "TBIMOVEL")
-public class ImovelModel {
+public class ImovelModel{
 
     @Id@GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private int id;
 
     private String dsImovel;
 
@@ -17,11 +17,11 @@ public class ImovelModel {
 
     private String nmTipo;
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

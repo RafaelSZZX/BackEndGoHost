@@ -23,7 +23,7 @@ public class AdminController {
     AdminRepository adminRepository;
 
     @GetMapping
-    public ResponseEntity<List<AdminModel>> getAllAdmins() {
+    public ResponseEntity<List<AdminModel>> getAdmin() {
         return ResponseEntity.status(HttpStatus.OK).body(adminRepository.findAll());
     }
 
