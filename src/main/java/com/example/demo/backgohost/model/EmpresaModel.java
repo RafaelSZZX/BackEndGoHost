@@ -8,9 +8,9 @@ public abstract class EmpresaModel{
     @Id@GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    private String nmUsuarioAdmin = "admin";
+    private String nmUsuarioAdmin;
 
-    private String nuSenhaAdmin = "admin";
+    private String nuSenhaAdmin;
 
     public int getId() {
         return id;
