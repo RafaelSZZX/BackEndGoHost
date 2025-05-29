@@ -7,15 +7,4 @@ import jakarta.persistence.*;
 @Table(name = "TBADMIN")
 public class AdminModel extends EmpresaModel{
 
-    @Id@GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
 }

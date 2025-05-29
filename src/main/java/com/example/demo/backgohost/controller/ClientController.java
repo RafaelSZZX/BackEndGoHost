@@ -1,9 +1,10 @@
 package com.example.demo.backgohost.controller;
 
-import com.example.demo.backgohost.dto.AdminRecordDto;
+
 import com.example.demo.backgohost.dto.ClientRecordDto;
-import com.example.demo.backgohost.model.AdminModel;
+import com.example.demo.backgohost.dto.FeedbackRecordDto;
 import com.example.demo.backgohost.model.ClientModel;
+import com.example.demo.backgohost.model.FeedbackModel;
 import com.example.demo.backgohost.repository.ClientRepository;
 import com.example.demo.backgohost.service.ClientService;
 import org.springframework.beans.BeanUtils;
@@ -22,6 +23,9 @@ public class ClientController {
     @Autowired
     ClientRepository clientRepository;
 
+    @Autowired
+    private ClientService clientService;
+
     @PostMapping
     public ResponseEntity<ClientModel> createClient(@RequestBody ClientRecordDto client) {
         ClientModel clientModel = new ClientModel();
@@ -30,12 +34,9 @@ public class ClientController {
     }
 
     @GetMapping
-    public ResponseEntity<List<ClientModel>> getCliente() {
+    public ResponseEntity<List<ClientModel>> getClientes() {
         return ResponseEntity.status(HttpStatus.OK).body(clientRepository.findAll());
     }
-
-    @Autowired
-    private ClientService clientService;
 
     @PutMapping("/{id}")
     public ResponseEntity<ClientModel> updateClient(@PathVariable int id, @RequestBody ClientModel clientModel) {
@@ -47,5 +48,11 @@ public class ClientController {
         }
     }
 
+    @PostMapping("/feedback")
+    public ResponseEntity<FeedbackModel> createClientFeedback(@RequestBody FeedbackRecordDto feedback) {
+        FeedbackModel feedbackModel = new FeedbackModel();
+        BeanUtils.copyProperties(feedback, feedbackModel);
+        return ResponseEntity.status(HttpStatus.CREATED).body(clientRepository.save(feedbackModel));
+    }
 
 }
